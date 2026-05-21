@@ -476,8 +476,25 @@
       color:#71717a;
       font-size:14px;
     }
+.rotating-showcase{
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  background:#050505;
+  border:1px solid rgba(127,29,29,.45);
+  border-radius:22px;
+  padding:18px;
+}
 
-    @media(max-width:900px){
+.rotating-showcase img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:contain;
+  border-radius:18px;
+  display:block;
+}
+
+@media(max-width:900px){
       nav{
         display:none;
       }
@@ -642,15 +659,14 @@
           <h2 class="script-title">Custom props, decor, collectibles, and one-of-a-kind builds.</h2>
         </div>
 
-        <div class="showcase-grid">
-          <img class="showcase-image" src="assets/ahsoka-display.png.png" alt="Ahsoka Sabers"/>
-          <img class="showcase-image wide" src="assets/ammo-reloader.png" alt="Ammo Reloader"/>
-          <img class="showcase-image" src="assets/lightsabers.png" alt="Lightsaber Display"/>
-          <img class="showcase-image" src="assets/dragon-skull.png.png" alt="Dragon Skull"/>
-          <img class="showcase-image" src="assets/solo-blaster.png" alt="Han Solo Display"/>
-          <img class="showcase-image" src="assets/count-dooku-bust.png.png" alt="Count Dooku Bust"/>
-          <img class="showcase-image" src="assets/jedi-holocron.png.png" alt="Jedi Holocron Light"/>
-        </div>
+   <div class="section-intro secondary-showcase">
+  <p class="label">Recent Creations</p>
+  <h2 class="script-title">Custom props, decor, collectibles, and one-of-a-kind builds.</h2>
+</div>
+
+<div class="rotating-showcase">
+  <img id="rotatingImage" src="assets/ahsoka-display.png.png" alt="Recent Creation">
+</div>
 
       </div>
     </section>
@@ -785,9 +801,29 @@
 
   </main>
 
-  <footer>
-    © 2026 Stormwake Creations. Custom 3D prints, creative goods, and maker-built solutions.
-  </footer>
+ <footer>
+  © 2026 Stormwake Creations. Custom 3D prints, creative goods, and maker-built solutions.
+</footer>
+
+<script>
+  const showcaseImages = [
+    "assets/ahsoka-display.png.png",
+    "assets/ammo-reloader.png",
+    "assets/lightsabers.png",
+    "assets/dragon-skull.png.png",
+    "assets/solo-blaster.png",
+    "assets/count-dooku-bust.png.png",
+    "assets/jedi-holocron.png.png"
+  ];
+
+  let currentImage = 0;
+  const rotatingImage = document.getElementById("rotatingImage");
+
+  setInterval(() => {
+    currentImage = (currentImage + 1) % showcaseImages.length;
+    rotatingImage.src = showcaseImages[currentImage];
+  }, 3000);
+</script>
 
 </body>
 </html>
