@@ -512,7 +512,7 @@
   object-fit:contain;
   border-radius:18px;
   display:block;
-  transition:opacity .4s ease;
+  transition:opacity .8s ease;
 }
 
 .rotating-showcase img.fade-out{
@@ -925,7 +925,7 @@ let currentImage = Math.floor(Math.random() * showcaseImages.length);
       showcaseCaption.textContent = showcaseImages[currentImage].caption;
 
       rotatingImage.classList.remove("fade-out");
-    }, 400);
+    }, 600);
   }
 
   setInterval(updateShowcase, 3500);
