@@ -27,12 +27,19 @@
       scroll-behavior:smooth;
     }
 
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
+  body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    linear-gradient(90deg,
+      rgba(127,29,29,.18),
+      transparent 18%,
+      transparent 82%,
+      rgba(127,29,29,.18)
+    ),
+    var(--bg);
+  color:var(--text);
+}
 
     .script-title{
       font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;
@@ -251,10 +258,6 @@
       line-height:1.55;
       font-size:14px;
     }
-#about{
-  background:
-    linear-gradient(90deg,rgba(127,29,29,.18),transparent 18%,transparent 82%,rgba(127,29,29,.18));
-}
 
 #about .container{
   width:min(1280px,calc(100% - 80px));
