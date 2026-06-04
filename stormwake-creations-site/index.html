@@ -478,12 +478,14 @@
     }
 .rotating-showcase{
   width:100%;
-  max-width:700px;
-  margin:0 auto;
+  max-width:820px;
+  margin:0 auto 40px;
   background:#050505;
   border:1px solid rgba(127,29,29,.45);
-  border-radius:22px;
-  padding:18px;
+  border-radius:24px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(127,29,29,.25);
 }
 
 .rotating-showcase img{
@@ -492,6 +494,41 @@
   object-fit:contain;
   border-radius:18px;
   display:block;
+  transition:opacity .4s ease;
+}
+
+.rotating-showcase img.fade-out{
+  opacity:0;
+}
+
+.rotating-showcase h3{
+  margin:20px 0 6px;
+  font-size:24px;
+}
+.showcase-frame{
+  background:#050505;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.secondary-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 22px;
+  border:1px solid rgba(127,29,29,.6);
+  border-radius:999px;
+  color:white;
+  text-decoration:none;
+  transition:.2s ease;
+}
+
+.secondary-btn:hover{
+  background:rgba(127,29,29,.2);
+}
+.rotating-showcase p{
+  margin:0 0 10px;
+  color:var(--muted);
+  line-height:1.55;
 }
 
 @media(max-width:900px){
@@ -595,71 +632,30 @@
 
   <main>
 
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <img class="hero-logo" src="assets/stormwake-logo.png" alt="Stormwake Creations Logo"/>
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Custom 3D Prints Built with a Bold Creative Edge</h1>
+    <p>
+      From movie-inspired props and tabletop pieces to practical prints and custom gifts,
+      Stormwake Creations brings your ideas to life layer by layer.
+    </p>
 
-          <div class="eyebrow">Custom Built • Tabletop Inspired • Creator Driven</div>
+    <a href="#custom-builds" class="main-btn">Request a Custom Build</a>
+  </div>
+</section>
 
-          <h2 class="script-title">Custom 3D prints with a bold creative edge.</h2>
+<section class="rotating-showcase">
+  <h2>Recent Creations</h2>
 
-          <p>
-            Stormwake Creations brings ideas to life through detailed, made-to-order 3D printed pieces — from tabletop accessories and gifts to custom parts, decor, and one-of-a-kind creations.
-          </p>
+  <div class="showcase-frame">
+    <img id="rotatingImage" src="assets/ahsoka-display.png.png" alt="Stormwake Creations project">
+  </div>
 
-          <div class="hero-actions">
-          <a class="button" href="#request">Request a Custom Build</a>
-            <a class="button secondary" href="#showcase">View Showcase</a>
-          </div>
-        </div>
+  <h3 id="showcaseTitle">Ahsoka Display Stand</h3>
+  <p id="showcaseCaption">Custom printed display piece inspired by a galaxy far, far away.</p>
 
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <p class="label">Featured</p>
-              <h3 class="script-title">Maker’s Showcase</h3>
-            </div>
-            <div style="color:#f87171;font-size:30px;">✦</div>
-          </div>
-
-          <div class="mini-card">
-            <h4>Tabletop & Gaming Pieces</h4>
-            <p>Miniature accessories, terrain, tokens, organizers, and display pieces.</p>
-          </div>
-
-          <div class="mini-card">
-            <h4>Custom Gifts</h4>
-            <p>Personalized signs, themed decor, nameplates, and unique keepsakes.</p>
-          </div>
-
-          <div class="mini-card">
-            <h4>Practical Prints</h4>
-            <p>Replacement pieces, brackets, mounts, clips, organizers, and useful parts.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="showcase">
-      <div class="container">
-
-        <div class="section-intro">
-          <p class="label">Featured Build</p>
-          <h2 class="script-title">A centerpiece worthy of the collection.</h2>
-        </div>
-
-        <div class="featured-showcase">
-          <img class="featured-image" src="assets/rancor-wallmount.png.png" alt="Rancor Mount"/>
-        </div>
-
-<div class="rotating-showcase">
-  <img id="rotatingImage" src="assets/ahsoka-display.png.png" alt="Recent Creation">
-</div>
-
-      </div>
-    </section>
-
+  <a href="#request" class="secondary-btn">View Full Gallery</a>
+</section>
     <section id="custom" class="custom">
       <div class="container custom-grid">
         <div>
@@ -781,27 +777,84 @@
 
 <script>
   const showcaseImages = [
-    "assets/ahsoka-display.png.png",
-    "assets/ammo-reloader.png",
-    "assets/lightsabers.png",
-    "assets/dragon-skull.png.png",
-    "assets/solo-blaster.png",
-    "assets/count-dooku-bust.png.png",
-    "assets/jedi-holocron.png.png",
-    "assets/Aliens.PNG",
-    "assets/Cats.PNG",
-    "assets/Knit Cat.PNG",
-    "assets/Titans.PNG"
+    {
+      src: "assets/ahsoka-display.png.png",
+      title: "Ahsoka Display Stand",
+      caption: "Custom printed display piece inspired by a galaxy far, far away."
+    },
+    {
+      src: "assets/ammo-reloader.png",
+      title: "Ammo Reloader Handle",
+      caption: "A practical 3D printed replacement part made to fit real use."
+    },
+    {
+      src: "assets/lightsabers.png",
+      title: "Lightsaber Collection",
+      caption: "Display-worthy prop pieces for collectors and fans."
+    },
+    {
+      src: "assets/dragon-skull.png.png",
+      title: "Dragon Skull",
+      caption: "Fantasy display piece with bold shelf presence."
+    },
+    {
+      src: "assets/solo-blaster.png",
+      title: "Blaster Prop",
+      caption: "A custom printed sci-fi prop made for display."
+    },
+    {
+      src: "assets/count-dooku-bust.png.png",
+      title: "Count Dooku Bust",
+      caption: "Collector-style bust printed for display and painting."
+    },
+    {
+      src: "assets/jedi-holocron.png.png",
+      title: "Jedi Holocron",
+      caption: "A detailed prop piece for fans, collectors, and display shelves."
+    },
+    {
+      src: "assets/Aliens.PNG",
+      title: "Alien Display",
+      caption: "A bold custom print with sci-fi style."
+    },
+    {
+      src: "assets/Cats.PNG",
+      title: "Cat Print",
+      caption: "A fun decorative print for animal lovers."
+    },
+    {
+      src: "assets/Knit Cat.PNG",
+      title: "Knit Cat",
+      caption: "A cozy custom cat-themed print."
+    },
+    {
+      src: "assets/Titans.PNG",
+      title: "Titans Print",
+      caption: "A custom fan-inspired display piece."
+    }
   ];
 
-  let currentImage = 0;
+  let currentImage = Math.floor(Math.random() * showcaseImages.length);
+
   const rotatingImage = document.getElementById("rotatingImage");
+  const showcaseTitle = document.getElementById("showcaseTitle");
+  const showcaseCaption = document.getElementById("showcaseCaption");
 
-  setInterval(() => {
-    currentImage = (currentImage + 1) % showcaseImages.length;
-    rotatingImage.src = showcaseImages[currentImage];
-  }, 3000);
+  function updateShowcase() {
+    rotatingImage.classList.add("fade-out");
+
+    setTimeout(() => {
+      currentImage = (currentImage + 1) % showcaseImages.length;
+
+      rotatingImage.src = showcaseImages[currentImage].src;
+      showcaseTitle.textContent = showcaseImages[currentImage].title;
+      showcaseCaption.textContent = showcaseImages[currentImage].caption;
+
+      rotatingImage.classList.remove("fade-out");
+    }, 400);
+  }
+
+  setInterval(updateShowcase, 3500);
 </script>
-
 </body>
 </html>
