@@ -392,7 +392,25 @@
       line-height:1.05;
       margin:16px 0 0;
     }
+.about-photo{
+  width:100%;
+  display:block;
+  border-radius:24px;
+  margin-bottom:18px;
+  border:2px solid rgba(127,29,29,.45);
+  box-shadow:0 0 30px rgba(185,28,28,.25);
+}
 
+.about-box h3{
+  margin:0;
+  text-align:center;
+  font-size:24px;
+}
+
+.about-box p{
+  text-align:center;
+  color:var(--muted);
+}
     .about-copy{
       color:#d4d4d8;
       font-size:18px;
@@ -739,10 +757,15 @@
 
     <section id="about">
       <div class="container about-grid">
-        <div class="about-box">
-          <div style="font-size:42px;color:#fca5a5;">⚓</div>
-          <h2 class="script-title">Built with creativity. Printed with purpose.</h2>
-        </div>
+       <div class="about-box">
+  <img
+    src="assets/sawyer.png"
+    alt="Sawyer Shepherd"
+    class="about-photo">
+
+  <h3>Sawyer Shepherd</h3>
+  <p>Owner • Maker • Creator</p>
+</div>
 
         <div class="about-copy">
           <p>Hi, I’m Sawyer — the creator behind Stormwake Creations.</p>
