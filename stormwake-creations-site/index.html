@@ -26,15 +26,20 @@
       box-sizing:border-box;
       scroll-behavior:smooth;
     }
+    
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:
-    radial-gradient(circle at left center, rgba(127,29,29,.22), transparent 32%),
-    radial-gradient(circle at right center, rgba(127,29,29,.22), transparent 32%),
-    var(--bg);
+    linear-gradient(90deg,
+      rgba(127,29,29,.16) 0%,
+      rgba(9,9,11,1) 22%,
+      rgba(9,9,11,1) 78%,
+      rgba(127,29,29,.16) 100%
+    );
   color:var(--text);
 }
+    
     .script-title{
       font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;
       font-weight:600;
@@ -149,14 +154,12 @@ body{
       box-shadow:none;
     }
 
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding:105px 0 92px;
-      background:
-        radial-gradient(circle at top right,rgba(185,28,28,.26),transparent 35%),
-        radial-gradient(circle at bottom left,rgba(255,255,255,.08),transparent 30%);
-    }
+  .hero{
+  position:relative;
+  overflow:hidden;
+  padding:105px 0 92px;
+  background:transparent;
+}
 
     .hero-grid{
       display:grid;
