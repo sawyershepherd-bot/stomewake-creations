@@ -26,21 +26,15 @@
       box-sizing:border-box;
       scroll-behavior:smooth;
     }
-
-  body{
+body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:
-    linear-gradient(90deg,
-      rgba(127,29,29,.18),
-      transparent 18%,
-      transparent 82%,
-      rgba(127,29,29,.18)
-    ),
+    radial-gradient(circle at left center, rgba(127,29,29,.22), transparent 32%),
+    radial-gradient(circle at right center, rgba(127,29,29,.22), transparent 32%),
     var(--bg);
   color:var(--text);
 }
-
     .script-title{
       font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;
       font-weight:600;
