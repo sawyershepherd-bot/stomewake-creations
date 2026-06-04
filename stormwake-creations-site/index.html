@@ -901,9 +901,14 @@
       title: "Titans Print",
       caption: "A custom fan-inspired pencil/pen holder."
     }
-  ];
+];
 
-  let currentImage = Math.floor(Math.random() * showcaseImages.length);
+showcaseImages.forEach((item) => {
+  const img = new Image();
+  img.src = item.src;
+});
+
+let currentImage = Math.floor(Math.random() * showcaseImages.length);
 
   const rotatingImage = document.getElementById("rotatingImage");
   const showcaseTitle = document.getElementById("showcaseTitle");
